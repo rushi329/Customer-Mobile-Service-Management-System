@@ -1,10 +1,10 @@
 # Customer-Mobile-Service-Management-System
 
 # Introduction about project:-
-                      In this we will create software of mobile store that allows the owner / employee to keep records regarding the mobile phones of the customers who submit their mobile phones of the customers who submit their mobiles for repairing.
+In this we will create software of mobile store that allows the owner / employee to keep records regarding the mobile phones of the customers who submit their mobile phones of the customers who submit their mobiles for repairing.
 
 # Existing System:-
-                    In today’s world, it is very time consuming and tedious for the owner or employee to keep records of customers mobile phones, parts, repairing, bill, etc. Currently the owner or employee keeps records of customers, mobile phones, parts, repairing, bill, etc. In a notebook which is time consuming and tedious for the owner or employee.
+In today’s world, it is very time consuming and tedious for the owner or employee to keep records of customers mobile phones, parts, repairing, bill, etc. Currently the owner or employee keeps records of customers, mobile phones, parts, repairing, bill, etc. In a notebook which is time consuming and tedious for the owner or employee.
 
 # Features of Mobile Service Centre:-
 ## Admin Module:-
