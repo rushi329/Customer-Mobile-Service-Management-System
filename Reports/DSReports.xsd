@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSReports" targetNamespace="http://tempuri.org/DSReports.xsd" xmlns:mstns="http://tempuri.org/DSReports.xsd" xmlns="http://tempuri.org/DSReports.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DBMSCConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DBMSCConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MobileServiceCenter.Properties.Settings.GlobalReference.Default.DBMSCConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TblUserRegTableAdapter" GeneratorDataComponentClassName="TblUserRegTableAdapter" Name="TblUserReg" UserDataComponentName="TblUserRegTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBMSCConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT TblUserReg.UserID, TblUserReg.FullName, TblUserReg.UserAddress, TblUserReg.UserMobileNo, TblUserReg.UserGender, TblUserReg.UserType, TblUserReg.UserDOB, TblLogin.UserName, TblLogin.EmailId
+FROM     TblUserReg INNER JOIN
+                  TblLogin ON TblUserReg.UserID = TblLogin.UserID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="FullName" DataSetColumn="FullName" />
+              <Mapping SourceColumn="UserAddress" DataSetColumn="UserAddress" />
+              <Mapping SourceColumn="UserMobileNo" DataSetColumn="UserMobileNo" />
+              <Mapping SourceColumn="UserGender" DataSetColumn="UserGender" />
+              <Mapping SourceColumn="UserType" DataSetColumn="UserType" />
+              <Mapping SourceColumn="UserDOB" DataSetColumn="UserDOB" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+              <Mapping SourceColumn="EmailId" DataSetColumn="EmailId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TblCustRegTableAdapter" GeneratorDataComponentClassName="TblCustRegTableAdapter" Name="TblCustReg" UserDataComponentName="TblCustRegTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBMSCConnectionString (Settings)" DbObjectName="dbo.TblCustReg" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[TblCustReg] WHERE (([CustID] = @Original_CustID) AND ((@IsNull_CustFullName = 1 AND [CustFullName] IS NULL) OR ([CustFullName] = @Original_CustFullName)) AND ((@IsNull_CustMobileNo = 1 AND [CustMobileNo] IS NULL) OR ([CustMobileNo] = @Original_CustMobileNo)) AND ((@IsNull_CustEmailID = 1 AND [CustEmailID] IS NULL) OR ([CustEmailID] = @Original_CustEmailID)) AND ((@IsNull_CustAddress = 1 AND [CustAddress] IS NULL) OR ([CustAddress] = @Original_CustAddress)) AND ((@IsNull_CustAadhaarNo = 1 AND [CustAadhaarNo] IS NULL) OR ([CustAadhaarNo] = @Original_CustAadhaarNo)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CustID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CustID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CustFullName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CustFullName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CustFullName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CustFullName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CustMobileNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CustMobileNo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@Original_CustMobileNo" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="CustMobileNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CustEmailID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CustEmailID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CustEmailID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CustEmailID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CustAddress" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CustAddress" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CustAddress" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CustAddress" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CustAadhaarNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CustAadhaarNo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@Original_CustAadhaarNo" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="CustAadhaarNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[TblCustReg] ([CustFullName], [CustMobileNo], [CustEmailID], [CustAddress], [CustAadhaarNo]) VALUES (@CustFullName, @CustMobileNo, @CustEmailID, @CustAddress, @CustAadhaarNo);
+SELECT CustID, CustFullName, CustMobileNo, CustEmailID, CustAddress, CustAadhaarNo FROM TblCustReg WHERE (CustID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CustFullName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CustFullName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@CustMobileNo" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="CustMobileNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CustEmailID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CustEmailID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CustAddress" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CustAddress" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@CustAadhaarNo" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="CustAadhaarNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT CustID, CustFullName, CustMobileNo, CustEmailID, CustAddress, CustAadhaarNo FROM dbo.TblCustReg</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[TblCustReg] SET [CustFullName] = @CustFullName, [CustMobileNo] = @CustMobileNo, [CustEmailID] = @CustEmailID, [CustAddress] = @CustAddress, [CustAadhaarNo] = @CustAadhaarNo WHERE (([CustID] = @Original_CustID) AND ((@IsNull_CustFullName = 1 AND [CustFullName] IS NULL) OR ([CustFullName] = @Original_CustFullName)) AND ((@IsNull_CustMobileNo = 1 AND [CustMobileNo] IS NULL) OR ([CustMobileNo] = @Original_CustMobileNo)) AND ((@IsNull_CustEmailID = 1 AND [CustEmailID] IS NULL) OR ([CustEmailID] = @Original_CustEmailID)) AND ((@IsNull_CustAddress = 1 AND [CustAddress] IS NULL) OR ([CustAddress] = @Original_CustAddress)) AND ((@IsNull_CustAadhaarNo = 1 AND [CustAadhaarNo] IS NULL) OR ([CustAadhaarNo] = @Original_CustAadhaarNo)));
+SELECT CustID, CustFullName, CustMobileNo, CustEmailID, CustAddress, CustAadhaarNo FROM TblCustReg WHERE (CustID = @CustID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CustFullName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CustFullName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@CustMobileNo" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="CustMobileNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CustEmailID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CustEmailID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CustAddress" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CustAddress" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@CustAadhaarNo" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="CustAadhaarNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CustID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CustID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CustFullName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CustFullName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CustFullName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CustFullName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CustMobileNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CustMobileNo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@Original_CustMobileNo" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="CustMobileNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CustEmailID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CustEmailID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CustEmailID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CustEmailID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CustAddress" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CustAddress" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CustAddress" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CustAddress" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CustAadhaarNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CustAadhaarNo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@Original_CustAadhaarNo" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="CustAadhaarNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="CustID" ColumnName="CustID" DataSourceName="[C:\USERS\SUBHAM\DOCUMENTS\VISUAL STUDIO 2015\PROJECTS\MOBILESERVICECENTER\MOBILESERVICECENTER\DATABASE\DBMSC.MDF].dbo.TblCustReg" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CustID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CustID" DataSetColumn="CustID" />
+              <Mapping SourceColumn="CustFullName" DataSetColumn="CustFullName" />
+              <Mapping SourceColumn="CustMobileNo" DataSetColumn="CustMobileNo" />
+              <Mapping SourceColumn="CustEmailID" DataSetColumn="CustEmailID" />
+              <Mapping SourceColumn="CustAddress" DataSetColumn="CustAddress" />
+              <Mapping SourceColumn="CustAadhaarNo" DataSetColumn="CustAadhaarNo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TblCustMobTableAdapter" GeneratorDataComponentClassName="TblCustMobTableAdapter" Name="TblCustMob" UserDataComponentName="TblCustMobTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBMSCConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT TblCustMob.MobID, TblCustMob.CustID, TblCustMob.MobCompany, TblCustMob.MobModel, TblCustMob.MobVarient, TblCustMob.MobIMEI1, TblCustMob.MobIMEI2, TblCustReg.CustFullName, TblCustReg.CustMobileNo, 
+                  TblCustReg.CustEmailID, TblCustReg.CustAadhaarNo
+FROM     TblCustMob INNER JOIN
+                  TblCustReg ON TblCustMob.CustID = TblCustReg.CustID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MobID" DataSetColumn="MobID" />
+              <Mapping SourceColumn="CustID" DataSetColumn="CustID" />
+              <Mapping SourceColumn="MobCompany" DataSetColumn="MobCompany" />
+              <Mapping SourceColumn="MobModel" DataSetColumn="MobModel" />
+              <Mapping SourceColumn="MobVarient" DataSetColumn="MobVarient" />
+              <Mapping SourceColumn="MobIMEI1" DataSetColumn="MobIMEI1" />
+              <Mapping SourceColumn="MobIMEI2" DataSetColumn="MobIMEI2" />
+              <Mapping SourceColumn="CustFullName" DataSetColumn="CustFullName" />
+              <Mapping SourceColumn="CustMobileNo" DataSetColumn="CustMobileNo" />
+              <Mapping SourceColumn="CustEmailID" DataSetColumn="CustEmailID" />
+              <Mapping SourceColumn="CustAadhaarNo" DataSetColumn="CustAadhaarNo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TblMobSubmitTableAdapter" GeneratorDataComponentClassName="TblMobSubmitTableAdapter" Name="TblMobSubmit" UserDataComponentName="TblMobSubmitTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBMSCConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT TblMobSubmit.SubmitedID, TblMobSubmit.MobID, TblMobSubmit.SubmitedDate, TblMobSubmit.ProblemDesc, TblMobSubmit.RepairDate, TblMobSubmit.RepairStatus, TblCustMob.CustID, TblCustMob.MobCompany, TblCustMob.MobModel, 
+                  TblCustMob.MobVarient, TblCustMob.MobIMEI1, TblCustMob.MobIMEI2, TblCustReg.CustFullName, TblCustReg.CustMobileNo, TblCustReg.CustEmailID, TblCustReg.CustAadhaarNo
+FROM     TblMobSubmit INNER JOIN
+                  TblCustMob ON TblMobSubmit.MobID = TblCustMob.MobID INNER JOIN
+                  TblCustReg ON TblCustMob.CustID = TblCustReg.CustID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SubmitedID" DataSetColumn="SubmitedID" />
+              <Mapping SourceColumn="SubmitedDate" DataSetColumn="SubmitedDate" />
+              <Mapping SourceColumn="ProblemDesc" DataSetColumn="ProblemDesc" />
+              <Mapping SourceColumn="RepairDate" DataSetColumn="RepairDate" />
+              <Mapping SourceColumn="RepairStatus" DataSetColumn="RepairStatus" />
+              <Mapping SourceColumn="CustID" DataSetColumn="CustID" />
+              <Mapping SourceColumn="MobCompany" DataSetColumn="MobCompany" />
+              <Mapping SourceColumn="MobModel" DataSetColumn="MobModel" />
+              <Mapping SourceColumn="MobVarient" DataSetColumn="MobVarient" />
+              <Mapping SourceColumn="MobIMEI1" DataSetColumn="MobIMEI1" />
+              <Mapping SourceColumn="MobIMEI2" DataSetColumn="MobIMEI2" />
+              <Mapping SourceColumn="CustFullName" DataSetColumn="CustFullName" />
+              <Mapping SourceColumn="CustMobileNo" DataSetColumn="CustMobileNo" />
+              <Mapping SourceColumn="CustEmailID" DataSetColumn="CustEmailID" />
+              <Mapping SourceColumn="CustAadhaarNo" DataSetColumn="CustAadhaarNo" />
+              <Mapping SourceColumn="MobID" DataSetColumn="MobID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TblMobReturnTableAdapter" GeneratorDataComponentClassName="TblMobReturnTableAdapter" Name="TblMobReturn" UserDataComponentName="TblMobReturnTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBMSCConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT TblMobReturn.ReturnedID, TblMobReturn.SubmitedID, TblMobReturn.RepairDesc, TblMobReturn.ReturnedDate, TblMobReturn.TotalBillAmt, TblMobSubmit.RepairStatus, TblMobSubmit.RepairDate, TblMobSubmit.ProblemDesc, 
+                  TblMobSubmit.SubmitedDate, TblMobSubmit.MobID, TblCustMob.CustID, TblCustMob.MobCompany, TblCustMob.MobModel, TblCustMob.MobVarient, TblCustReg.CustFullName, TblCustReg.CustMobileNo
+FROM     TblMobReturn INNER JOIN
+                  TblMobSubmit ON TblMobReturn.SubmitedID = TblMobSubmit.SubmitedID INNER JOIN
+                  TblCustMob ON TblMobSubmit.MobID = TblCustMob.MobID INNER JOIN
+                  TblCustReg ON TblCustMob.CustID = TblCustReg.CustID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ReturnedID" DataSetColumn="ReturnedID" />
+              <Mapping SourceColumn="SubmitedID" DataSetColumn="SubmitedID" />
+              <Mapping SourceColumn="RepairDesc" DataSetColumn="RepairDesc" />
+              <Mapping SourceColumn="ReturnedDate" DataSetColumn="ReturnedDate" />
+              <Mapping SourceColumn="TotalBillAmt" DataSetColumn="TotalBillAmt" />
+              <Mapping SourceColumn="RepairStatus" DataSetColumn="RepairStatus" />
+              <Mapping SourceColumn="RepairDate" DataSetColumn="RepairDate" />
+              <Mapping SourceColumn="ProblemDesc" DataSetColumn="ProblemDesc" />
+              <Mapping SourceColumn="SubmitedDate" DataSetColumn="SubmitedDate" />
+              <Mapping SourceColumn="MobID" DataSetColumn="MobID" />
+              <Mapping SourceColumn="CustID" DataSetColumn="CustID" />
+              <Mapping SourceColumn="MobCompany" DataSetColumn="MobCompany" />
+              <Mapping SourceColumn="MobModel" DataSetColumn="MobModel" />
+              <Mapping SourceColumn="MobVarient" DataSetColumn="MobVarient" />
+              <Mapping SourceColumn="CustFullName" DataSetColumn="CustFullName" />
+              <Mapping SourceColumn="CustMobileNo" DataSetColumn="CustMobileNo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSReports" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSReports" msprop:Generator_UserDSName="DSReports">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TblUserReg" msprop:Generator_TableClassName="TblUserRegDataTable" msprop:Generator_TableVarName="tableTblUserReg" msprop:Generator_RowChangedName="TblUserRegRowChanged" msprop:Generator_TablePropName="TblUserReg" msprop:Generator_RowDeletingName="TblUserRegRowDeleting" msprop:Generator_RowChangingName="TblUserRegRowChanging" msprop:Generator_RowEvHandlerName="TblUserRegRowChangeEventHandler" msprop:Generator_RowDeletedName="TblUserRegRowDeleted" msprop:Generator_RowClassName="TblUserRegRow" msprop:Generator_UserTableName="TblUserReg" msprop:Generator_RowEvArgName="TblUserRegRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
+              <xs:element name="FullName" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserAddress" msprop:Generator_ColumnVarNameInTable="columnUserAddress" msprop:Generator_ColumnPropNameInRow="UserAddress" msprop:Generator_ColumnPropNameInTable="UserAddressColumn" msprop:Generator_UserColumnName="UserAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserMobileNo" msprop:Generator_ColumnVarNameInTable="columnUserMobileNo" msprop:Generator_ColumnPropNameInRow="UserMobileNo" msprop:Generator_ColumnPropNameInTable="UserMobileNoColumn" msprop:Generator_UserColumnName="UserMobileNo" type="xs:long" minOccurs="0" />
+              <xs:element name="UserGender" msprop:Generator_ColumnVarNameInTable="columnUserGender" msprop:Generator_ColumnPropNameInRow="UserGender" msprop:Generator_ColumnPropNameInTable="UserGenderColumn" msprop:Generator_UserColumnName="UserGender" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserType" msprop:Generator_ColumnVarNameInTable="columnUserType" msprop:Generator_ColumnPropNameInRow="UserType" msprop:Generator_ColumnPropNameInTable="UserTypeColumn" msprop:Generator_UserColumnName="UserType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserDOB" msprop:Generator_ColumnVarNameInTable="columnUserDOB" msprop:Generator_ColumnPropNameInRow="UserDOB" msprop:Generator_ColumnPropNameInTable="UserDOBColumn" msprop:Generator_UserColumnName="UserDOB" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmailId" msprop:Generator_ColumnVarNameInTable="columnEmailId" msprop:Generator_ColumnPropNameInRow="EmailId" msprop:Generator_ColumnPropNameInTable="EmailIdColumn" msprop:Generator_UserColumnName="EmailId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TblCustReg" msprop:Generator_TableClassName="TblCustRegDataTable" msprop:Generator_TableVarName="tableTblCustReg" msprop:Generator_TablePropName="TblCustReg" msprop:Generator_RowDeletingName="TblCustRegRowDeleting" msprop:Generator_RowChangingName="TblCustRegRowChanging" msprop:Generator_RowEvHandlerName="TblCustRegRowChangeEventHandler" msprop:Generator_RowDeletedName="TblCustRegRowDeleted" msprop:Generator_UserTableName="TblCustReg" msprop:Generator_RowChangedName="TblCustRegRowChanged" msprop:Generator_RowEvArgName="TblCustRegRowChangeEvent" msprop:Generator_RowClassName="TblCustRegRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CustID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCustID" msprop:Generator_ColumnPropNameInRow="CustID" msprop:Generator_ColumnPropNameInTable="CustIDColumn" msprop:Generator_UserColumnName="CustID" type="xs:int" />
+              <xs:element name="CustFullName" msprop:Generator_ColumnVarNameInTable="columnCustFullName" msprop:Generator_ColumnPropNameInRow="CustFullName" msprop:Generator_ColumnPropNameInTable="CustFullNameColumn" msprop:Generator_UserColumnName="CustFullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustMobileNo" msprop:Generator_ColumnVarNameInTable="columnCustMobileNo" msprop:Generator_ColumnPropNameInRow="CustMobileNo" msprop:Generator_ColumnPropNameInTable="CustMobileNoColumn" msprop:Generator_UserColumnName="CustMobileNo" type="xs:long" minOccurs="0" />
+              <xs:element name="CustEmailID" msprop:Generator_ColumnVarNameInTable="columnCustEmailID" msprop:Generator_ColumnPropNameInRow="CustEmailID" msprop:Generator_ColumnPropNameInTable="CustEmailIDColumn" msprop:Generator_UserColumnName="CustEmailID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustAddress" msprop:Generator_ColumnVarNameInTable="columnCustAddress" msprop:Generator_ColumnPropNameInRow="CustAddress" msprop:Generator_ColumnPropNameInTable="CustAddressColumn" msprop:Generator_UserColumnName="CustAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustAadhaarNo" msprop:Generator_ColumnVarNameInTable="columnCustAadhaarNo" msprop:Generator_ColumnPropNameInRow="CustAadhaarNo" msprop:Generator_ColumnPropNameInTable="CustAadhaarNoColumn" msprop:Generator_UserColumnName="CustAadhaarNo" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TblCustMob" msprop:Generator_TableClassName="TblCustMobDataTable" msprop:Generator_TableVarName="tableTblCustMob" msprop:Generator_TablePropName="TblCustMob" msprop:Generator_RowDeletingName="TblCustMobRowDeleting" msprop:Generator_RowChangingName="TblCustMobRowChanging" msprop:Generator_RowEvHandlerName="TblCustMobRowChangeEventHandler" msprop:Generator_RowDeletedName="TblCustMobRowDeleted" msprop:Generator_UserTableName="TblCustMob" msprop:Generator_RowChangedName="TblCustMobRowChanged" msprop:Generator_RowEvArgName="TblCustMobRowChangeEvent" msprop:Generator_RowClassName="TblCustMobRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MobID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMobID" msprop:Generator_ColumnPropNameInRow="MobID" msprop:Generator_ColumnPropNameInTable="MobIDColumn" msprop:Generator_UserColumnName="MobID" type="xs:int" />
+              <xs:element name="CustID" msprop:Generator_ColumnVarNameInTable="columnCustID" msprop:Generator_ColumnPropNameInRow="CustID" msprop:Generator_ColumnPropNameInTable="CustIDColumn" msprop:Generator_UserColumnName="CustID" type="xs:int" minOccurs="0" />
+              <xs:element name="MobCompany" msprop:Generator_ColumnVarNameInTable="columnMobCompany" msprop:Generator_ColumnPropNameInRow="MobCompany" msprop:Generator_ColumnPropNameInTable="MobCompanyColumn" msprop:Generator_UserColumnName="MobCompany" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MobModel" msprop:Generator_ColumnVarNameInTable="columnMobModel" msprop:Generator_ColumnPropNameInRow="MobModel" msprop:Generator_ColumnPropNameInTable="MobModelColumn" msprop:Generator_UserColumnName="MobModel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MobVarient" msprop:Generator_ColumnVarNameInTable="columnMobVarient" msprop:Generator_ColumnPropNameInRow="MobVarient" msprop:Generator_ColumnPropNameInTable="MobVarientColumn" msprop:Generator_UserColumnName="MobVarient" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MobIMEI1" msprop:Generator_ColumnVarNameInTable="columnMobIMEI1" msprop:Generator_ColumnPropNameInRow="MobIMEI1" msprop:Generator_ColumnPropNameInTable="MobIMEI1Column" msprop:Generator_UserColumnName="MobIMEI1" type="xs:long" minOccurs="0" />
+              <xs:element name="MobIMEI2" msprop:Generator_ColumnVarNameInTable="columnMobIMEI2" msprop:Generator_ColumnPropNameInRow="MobIMEI2" msprop:Generator_ColumnPropNameInTable="MobIMEI2Column" msprop:Generator_UserColumnName="MobIMEI2" type="xs:long" minOccurs="0" />
+              <xs:element name="CustFullName" msprop:Generator_ColumnVarNameInTable="columnCustFullName" msprop:Generator_ColumnPropNameInRow="CustFullName" msprop:Generator_ColumnPropNameInTable="CustFullNameColumn" msprop:Generator_UserColumnName="CustFullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustMobileNo" msprop:Generator_ColumnVarNameInTable="columnCustMobileNo" msprop:Generator_ColumnPropNameInRow="CustMobileNo" msprop:Generator_ColumnPropNameInTable="CustMobileNoColumn" msprop:Generator_UserColumnName="CustMobileNo" type="xs:long" minOccurs="0" />
+              <xs:element name="CustEmailID" msprop:Generator_ColumnVarNameInTable="columnCustEmailID" msprop:Generator_ColumnPropNameInRow="CustEmailID" msprop:Generator_ColumnPropNameInTable="CustEmailIDColumn" msprop:Generator_UserColumnName="CustEmailID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustAadhaarNo" msprop:Generator_ColumnVarNameInTable="columnCustAadhaarNo" msprop:Generator_ColumnPropNameInRow="CustAadhaarNo" msprop:Generator_ColumnPropNameInTable="CustAadhaarNoColumn" msprop:Generator_UserColumnName="CustAadhaarNo" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TblMobSubmit" msprop:Generator_TableClassName="TblMobSubmitDataTable" msprop:Generator_TableVarName="tableTblMobSubmit" msprop:Generator_TablePropName="TblMobSubmit" msprop:Generator_RowDeletingName="TblMobSubmitRowDeleting" msprop:Generator_RowChangingName="TblMobSubmitRowChanging" msprop:Generator_RowEvHandlerName="TblMobSubmitRowChangeEventHandler" msprop:Generator_RowDeletedName="TblMobSubmitRowDeleted" msprop:Generator_UserTableName="TblMobSubmit" msprop:Generator_RowChangedName="TblMobSubmitRowChanged" msprop:Generator_RowEvArgName="TblMobSubmitRowChangeEvent" msprop:Generator_RowClassName="TblMobSubmitRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SubmitedID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSubmitedID" msprop:Generator_ColumnPropNameInRow="SubmitedID" msprop:Generator_ColumnPropNameInTable="SubmitedIDColumn" msprop:Generator_UserColumnName="SubmitedID" type="xs:int" />
+              <xs:element name="SubmitedDate" msprop:Generator_ColumnVarNameInTable="columnSubmitedDate" msprop:Generator_ColumnPropNameInRow="SubmitedDate" msprop:Generator_ColumnPropNameInTable="SubmitedDateColumn" msprop:Generator_UserColumnName="SubmitedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ProblemDesc" msprop:Generator_ColumnVarNameInTable="columnProblemDesc" msprop:Generator_ColumnPropNameInRow="ProblemDesc" msprop:Generator_ColumnPropNameInTable="ProblemDescColumn" msprop:Generator_UserColumnName="ProblemDesc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RepairDate" msprop:Generator_ColumnVarNameInTable="columnRepairDate" msprop:Generator_ColumnPropNameInRow="RepairDate" msprop:Generator_ColumnPropNameInTable="RepairDateColumn" msprop:Generator_UserColumnName="RepairDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RepairStatus" msprop:Generator_ColumnVarNameInTable="columnRepairStatus" msprop:Generator_ColumnPropNameInRow="RepairStatus" msprop:Generator_ColumnPropNameInTable="RepairStatusColumn" msprop:Generator_UserColumnName="RepairStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustID" msprop:Generator_ColumnVarNameInTable="columnCustID" msprop:Generator_ColumnPropNameInRow="CustID" msprop:Generator_ColumnPropNameInTable="CustIDColumn" msprop:Generator_UserColumnName="CustID" type="xs:int" minOccurs="0" />
+              <xs:element name="MobCompany" msprop:Generator_ColumnVarNameInTable="columnMobCompany" msprop:Generator_ColumnPropNameInRow="MobCompany" msprop:Generator_ColumnPropNameInTable="MobCompanyColumn" msprop:Generator_UserColumnName="MobCompany" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MobModel" msprop:Generator_ColumnVarNameInTable="columnMobModel" msprop:Generator_ColumnPropNameInRow="MobModel" msprop:Generator_ColumnPropNameInTable="MobModelColumn" msprop:Generator_UserColumnName="MobModel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MobVarient" msprop:Generator_ColumnVarNameInTable="columnMobVarient" msprop:Generator_ColumnPropNameInRow="MobVarient" msprop:Generator_ColumnPropNameInTable="MobVarientColumn" msprop:Generator_UserColumnName="MobVarient" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MobIMEI1" msprop:Generator_ColumnVarNameInTable="columnMobIMEI1" msprop:Generator_ColumnPropNameInRow="MobIMEI1" msprop:Generator_ColumnPropNameInTable="MobIMEI1Column" msprop:Generator_UserColumnName="MobIMEI1" type="xs:long" minOccurs="0" />
+              <xs:element name="MobIMEI2" msprop:Generator_ColumnVarNameInTable="columnMobIMEI2" msprop:Generator_ColumnPropNameInRow="MobIMEI2" msprop:Generator_ColumnPropNameInTable="MobIMEI2Column" msprop:Generator_UserColumnName="MobIMEI2" type="xs:long" minOccurs="0" />
+              <xs:element name="CustFullName" msprop:Generator_ColumnVarNameInTable="columnCustFullName" msprop:Generator_ColumnPropNameInRow="CustFullName" msprop:Generator_ColumnPropNameInTable="CustFullNameColumn" msprop:Generator_UserColumnName="CustFullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustMobileNo" msprop:Generator_ColumnVarNameInTable="columnCustMobileNo" msprop:Generator_ColumnPropNameInRow="CustMobileNo" msprop:Generator_ColumnPropNameInTable="CustMobileNoColumn" msprop:Generator_UserColumnName="CustMobileNo" type="xs:long" minOccurs="0" />
+              <xs:element name="CustEmailID" msprop:Generator_ColumnVarNameInTable="columnCustEmailID" msprop:Generator_ColumnPropNameInRow="CustEmailID" msprop:Generator_ColumnPropNameInTable="CustEmailIDColumn" msprop:Generator_UserColumnName="CustEmailID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustAadhaarNo" msprop:Generator_ColumnVarNameInTable="columnCustAadhaarNo" msprop:Generator_ColumnPropNameInRow="CustAadhaarNo" msprop:Generator_ColumnPropNameInTable="CustAadhaarNoColumn" msprop:Generator_UserColumnName="CustAadhaarNo" type="xs:long" minOccurs="0" />
+              <xs:element name="MobID" msprop:Generator_ColumnVarNameInTable="columnMobID" msprop:Generator_ColumnPropNameInRow="MobID" msprop:Generator_ColumnPropNameInTable="MobIDColumn" msprop:Generator_UserColumnName="MobID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TblMobReturn" msprop:Generator_TableClassName="TblMobReturnDataTable" msprop:Generator_TableVarName="tableTblMobReturn" msprop:Generator_TablePropName="TblMobReturn" msprop:Generator_RowDeletingName="TblMobReturnRowDeleting" msprop:Generator_RowChangingName="TblMobReturnRowChanging" msprop:Generator_RowEvHandlerName="TblMobReturnRowChangeEventHandler" msprop:Generator_RowDeletedName="TblMobReturnRowDeleted" msprop:Generator_UserTableName="TblMobReturn" msprop:Generator_RowChangedName="TblMobReturnRowChanged" msprop:Generator_RowEvArgName="TblMobReturnRowChangeEvent" msprop:Generator_RowClassName="TblMobReturnRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReturnedID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnReturnedID" msprop:Generator_ColumnPropNameInRow="ReturnedID" msprop:Generator_ColumnPropNameInTable="ReturnedIDColumn" msprop:Generator_UserColumnName="ReturnedID" type="xs:int" />
+              <xs:element name="SubmitedID" msprop:Generator_ColumnVarNameInTable="columnSubmitedID" msprop:Generator_ColumnPropNameInRow="SubmitedID" msprop:Generator_ColumnPropNameInTable="SubmitedIDColumn" msprop:Generator_UserColumnName="SubmitedID" type="xs:int" minOccurs="0" />
+              <xs:element name="RepairDesc" msprop:Generator_ColumnVarNameInTable="columnRepairDesc" msprop:Generator_ColumnPropNameInRow="RepairDesc" msprop:Generator_ColumnPropNameInTable="RepairDescColumn" msprop:Generator_UserColumnName="RepairDesc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReturnedDate" msprop:Generator_ColumnVarNameInTable="columnReturnedDate" msprop:Generator_ColumnPropNameInRow="ReturnedDate" msprop:Generator_ColumnPropNameInTable="ReturnedDateColumn" msprop:Generator_UserColumnName="ReturnedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TotalBillAmt" msprop:Generator_ColumnVarNameInTable="columnTotalBillAmt" msprop:Generator_ColumnPropNameInRow="TotalBillAmt" msprop:Generator_ColumnPropNameInTable="TotalBillAmtColumn" msprop:Generator_UserColumnName="TotalBillAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RepairStatus" msprop:Generator_ColumnVarNameInTable="columnRepairStatus" msprop:Generator_ColumnPropNameInRow="RepairStatus" msprop:Generator_ColumnPropNameInTable="RepairStatusColumn" msprop:Generator_UserColumnName="RepairStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RepairDate" msprop:Generator_ColumnVarNameInTable="columnRepairDate" msprop:Generator_ColumnPropNameInRow="RepairDate" msprop:Generator_ColumnPropNameInTable="RepairDateColumn" msprop:Generator_UserColumnName="RepairDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ProblemDesc" msprop:Generator_ColumnVarNameInTable="columnProblemDesc" msprop:Generator_ColumnPropNameInRow="ProblemDesc" msprop:Generator_ColumnPropNameInTable="ProblemDescColumn" msprop:Generator_UserColumnName="ProblemDesc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubmitedDate" msprop:Generator_ColumnVarNameInTable="columnSubmitedDate" msprop:Generator_ColumnPropNameInRow="SubmitedDate" msprop:Generator_ColumnPropNameInTable="SubmitedDateColumn" msprop:Generator_UserColumnName="SubmitedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MobID" msprop:Generator_ColumnVarNameInTable="columnMobID" msprop:Generator_ColumnPropNameInRow="MobID" msprop:Generator_ColumnPropNameInTable="MobIDColumn" msprop:Generator_UserColumnName="MobID" type="xs:int" minOccurs="0" />
+              <xs:element name="CustID" msprop:Generator_ColumnVarNameInTable="columnCustID" msprop:Generator_ColumnPropNameInRow="CustID" msprop:Generator_ColumnPropNameInTable="CustIDColumn" msprop:Generator_UserColumnName="CustID" type="xs:int" minOccurs="0" />
+              <xs:element name="MobCompany" msprop:Generator_ColumnVarNameInTable="columnMobCompany" msprop:Generator_ColumnPropNameInRow="MobCompany" msprop:Generator_ColumnPropNameInTable="MobCompanyColumn" msprop:Generator_UserColumnName="MobCompany" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MobModel" msprop:Generator_ColumnVarNameInTable="columnMobModel" msprop:Generator_ColumnPropNameInRow="MobModel" msprop:Generator_ColumnPropNameInTable="MobModelColumn" msprop:Generator_UserColumnName="MobModel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MobVarient" msprop:Generator_ColumnVarNameInTable="columnMobVarient" msprop:Generator_ColumnPropNameInRow="MobVarient" msprop:Generator_ColumnPropNameInTable="MobVarientColumn" msprop:Generator_UserColumnName="MobVarient" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustFullName" msprop:Generator_ColumnVarNameInTable="columnCustFullName" msprop:Generator_ColumnPropNameInRow="CustFullName" msprop:Generator_ColumnPropNameInTable="CustFullNameColumn" msprop:Generator_UserColumnName="CustFullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustMobileNo" msprop:Generator_ColumnVarNameInTable="columnCustMobileNo" msprop:Generator_ColumnPropNameInRow="CustMobileNo" msprop:Generator_ColumnPropNameInTable="CustMobileNoColumn" msprop:Generator_UserColumnName="CustMobileNo" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TblUserReg" />
+      <xs:field xpath="mstns:UserID" />
+    </xs:unique>
+    <xs:unique name="TblCustReg_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TblCustReg" />
+      <xs:field xpath="mstns:CustID" />
+    </xs:unique>
+    <xs:unique name="TblCustMob_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TblCustMob" />
+      <xs:field xpath="mstns:MobID" />
+    </xs:unique>
+    <xs:unique name="TblMobSubmit_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TblMobSubmit" />
+      <xs:field xpath="mstns:SubmitedID" />
+    </xs:unique>
+    <xs:unique name="TblMobReturn_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TblMobReturn" />
+      <xs:field xpath="mstns:ReturnedID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
